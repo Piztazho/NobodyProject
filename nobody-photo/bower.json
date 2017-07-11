@@ -6,7 +6,9 @@
     "angular-deferred-bootstrap": "~0.1.5",
     "angular-mocks": "latest",
     "angular": "latest",
-    "angular-route": "latest"
+    "angular-route": "latest",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0"
   },
   "ignore": [
     "**/.*",

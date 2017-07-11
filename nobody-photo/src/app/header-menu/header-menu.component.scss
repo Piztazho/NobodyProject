@@ -1,0 +1,128 @@
+$spread-shadow: 2px;
+
+@mixin headerStyles($spread, $shadow-color, $bGColor) {
+	background-color: $bGColor;
+
+	-webkit-box-shadow: $spread $spread 0px $spread $shadow-color;
+	-moz-box-shadow: $spread $spread 0px $spread $shadow-color;
+	box-shadow: $spread $spread 0px $spread $shadow-color;
+}
+
+.header-buttons{
+	position: absolute;
+	width: 100%;
+	z-index: 99;
+
+	.logo{
+		@include headerStyles($spread-shadow, rgba(0,0,0,1), white);
+
+		padding: 20px;
+
+		img{
+			width: 100%;
+		}
+	}
+
+	.burger-menu{
+		@include headerStyles($spread-shadow, rgba(0,0,0,1), white);
+		font-size: 35px;
+
+		text-align: center;
+		padding: 15px;
+
+		a{
+			color: black;
+			text-decoration: none;
+
+			&:hover,
+			&:focus{
+				text-decoration: none;
+			}
+		}
+
+		label{
+			/*border-bottom: 2px solid #ff5800;
+		    padding-top: 8px;
+		    display: block;*/
+
+		   /* border-bottom: 2px solid $orange;
+		    padding-top: 8px;
+			display: block;
+
+		    &:before,
+		    &:after{
+		      border-top: 2px solid $orange;
+		      content: "";
+		      position: absolute;
+		      left: 0;
+		      right: 0;
+		    }*/
+		}
+	}
+
+	&.inverted{
+		.logo{
+			@include headerStyles($spread-shadow, rgba(0,0,0,1), black);
+		}
+		.burger-menu{
+			@include headerStyles($spread-shadow, rgba(0,0,0,1), black);
+			a{
+				color: white;
+			}
+		}
+	}
+}
+
+.menu-extended{
+	position: absolute;
+
+	background-color: black;
+	height: 0; 
+	width: 0; 
+	opacity: 0;
+
+	-webkit-transition: opacity 0.3s, height 0.1s linear 0.3s, width 0.1s linear 0.3s; /* Safari 3.1 to 6.0 */
+    transition: opacity 0.3s, height 0.3s linear 0.3s, width 0.3s linear 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	&.open{
+		width: 100vw;
+		height: 100vh;
+
+		opacity: 1;
+
+		-webkit-transition: opacity 0.3s; /* Safari 3.1 to 6.0 */
+    	transition: opacity 0.3s;
+
+	}
+
+    .menu-items{
+    	ul{
+    		padding: 0;
+    		li{
+    			display: inline;
+    			text-transform: uppercase;
+    			font-size: 30px;
+
+    			margin-right: 30px;
+
+    			&:last-child{
+    				margin-right: 0;
+    			}
+    			a{
+    				color: white;
+    			}
+
+    			&.active{
+    				a{
+	   					text-decoration: underline;
+    				}
+    			}
+    		}
+    	}
+    }
+
+}

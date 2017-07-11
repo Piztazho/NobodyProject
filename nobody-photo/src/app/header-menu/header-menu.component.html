@@ -1,3 +1,46 @@
+<div class="header-buttons" [ngClass]="{inverted: !openMenu}">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 logo">
+				<a href="#" >
+					<img [src]="logoUrl">
+				</a>
+			</div>
+
+			<div class="col-md-offset-8 col-md-1">
+				<div class="burger-menu">
+					<a href="#" (click)="toggleMenu()">
+						<!--<label class="icon-menu"></label>-->
+						<i class="fa fa-bars" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="menu-extended" [ngClass]="{open: !openMenu}">
+	<nav class="menu-items">
+		<ul>
+			<li>
+				<a href="#">Personal</a>
+			</li>
+			<li>
+				<a href="#">ADS</a>
+			</li>
+			<li>
+				<a href="#">Fashion</a>
+			</li>
+			<li>
+				<a href="#">Beauty</a>
+			</li>
+			<li>
+				<a href="#">Bio</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
 <p>
   header-menu works!
 </p>
