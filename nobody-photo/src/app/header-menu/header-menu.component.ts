@@ -8,22 +8,26 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderMenuComponent implements OnInit {
 
 	public logoUrl:string = '../../../assets/logo-01.png';
-	public openMenu: boolean = false;
+	public openMenu: boolean;
 
   	constructor() {
-  		this.toggleMenu();
+  		this.toggleMenu(true);
   	}
 
   	ngOnInit() {
   	}
 
-  	toggleMenu(){
-  		if(!this.openMenu)
-  			this.logoUrl = '../../../assets/logo-01.png';
-  		else
-  			this.logoUrl = '../../../assets/logo-01_white.png';
+  	toggleMenu(value){
+      console.log(value);
+      //if(value.isBoolean)
 
-  		this.openMenu = !this.openMenu;
+  		this.openMenu = value;
+      
+      if(this.openMenu)
+        this.logoUrl = '../../../assets/logo-01.png';
+      else
+        this.logoUrl = '../../../assets/logo-01_white.png';
+
   	}
 
 }

@@ -9,10 +9,14 @@
 
 			<div class="col-md-offset-8 col-md-1">
 				<div class="burger-menu">
-					<a href="#" (click)="toggleMenu()">
-						<!--<label class="icon-menu"></label>-->
+					<input id="nav-check" class="nav-check" type="checkbox" (change)="toggleMenu($event.target.checked)" checked="">
+					<label for="nav-check">
+						<span class="icon-menu"></span>
+						
+					</label>
+					<!--<a href="#" (click)="toggleMenu()">
 						<i class="fa fa-bars" aria-hidden="true"></i>
-					</a>
+					</a>-->
 				</div>
 			</div>
 		</div>
