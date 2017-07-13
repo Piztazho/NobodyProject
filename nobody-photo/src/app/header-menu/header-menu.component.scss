@@ -30,10 +30,6 @@ $spread-shadow: 2px;
 		text-align: center;
 		padding: 15px;
 
-		.nav-check{
-			display: none;
-		}
-
 		label{
 			color: black;
 			text-decoration: none;
@@ -52,14 +48,13 @@ $spread-shadow: 2px;
 			    padding-top: 8px;
 			    display: block;*/
 
-			   	border-bottom: 4px solid black;
-			    padding-top: 8px;
+			   	border-bottom: 4px solid transparent;
 				display: block;
-				height: 17px;
+				height: 15px;
 
 			    &:before,
 			    &:after{
-			      border-top: 4px solid black;
+			      border-top: 4px solid white;
 			      content: "";
 			      position: absolute;
 			      left: 0;
@@ -68,13 +63,92 @@ $spread-shadow: 2px;
 
 			    &:before{
 			    	top: 0;
+			    	-webkit-transform: translateY(0) rotate(45deg);
+					-moz-transform: translateY(0) rotate(45deg);
+					-ms-transform: translateY(0) rotate(45deg);
+					-o-transform: translateY(0) rotate(45deg);
+					transform: translateY(0) rotate(45deg);
 			    }
 
 			    &:after{
 			    	bottom: 0;
+			    	-webkit-transform: translateY(1px) rotate(-45deg);
+					-moz-transform: translateY(1px) rotate(-45deg);
+					-ms-transform: translateY(1px) rotate(-45deg);
+					-o-transform: translateY(1px) rotate(-45deg);
+					transform: translateY(1px) rotate(-45deg);
 			    }
 			}
 		}
+		.nav-check{
+			display: none;
+
+			&:checked{
+				+ label{
+					.icon-menu{
+						-webkit-transition-delay: 0s;
+					    -moz-transition-delay: 0s;
+					    transition-delay: 0s;
+
+					    border-color: black;
+
+					    &:before,
+					    &:after{
+					    	-webkit-transition-delay: 0.125s;
+						    -moz-transition-delay: 0.125s;
+						    transition-delay: 0.125s;
+					    	
+					    	border-color: black;
+
+					    	-webkit-transition-property: -webkit-transform, border-color;
+						    -moz-transition-property: -moz-transform, border-color;
+						    transition-property: transform, border-color;
+						    -webkit-transition-duration: 0.25s;
+						    -moz-transition-duration: 0.25s;
+						    transition-duration: 0.25s;
+						    -webkit-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+						    -moz-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+						    transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+
+						    -webkit-transition-delay: 0s;
+					     	-moz-transition-delay: 0s;
+					      	transition-delay: 0s;
+					      	/*-webkit-transform-origin: center;
+					      	-moz-transform-origin: center;
+					      	-ms-transform-origin: center;
+					      	-o-transform-origin: center;
+					      	transform-origin: center;*/
+
+					      	-webkit-transform-origin: left;
+					      	-moz-transform-origin: left;
+					      	-ms-transform-origin: left;
+					      	-o-transform-origin: left;
+					      	transform-origin: left;
+					    }
+
+					    &:before{
+					    	top: 0;
+
+					    	-webkit-transform: translateY(-3px) rotate(0);
+							-moz-transform: translateY(-3px) rotate(0);
+							-ms-transform: translateY(-3px) rotate(0);
+							-o-transform: translateY(-3px) rotate(0);
+							transform: translateY(-3px) rotate(0);
+					    }
+
+					    &:after{
+					    	bottom: 0;
+					    	-webkit-transform: translateY(0) rotate(0);
+							-moz-transform: translateY(0) rotate(0);
+							-ms-transform: translateY(0) rotate(0);
+							-o-transform: translateY(0) rotate(0);
+							transform: translateY(0) rotate(0);
+					    }
+					}
+				}
+			}
+		}
+
 
 	}
 
@@ -89,7 +163,7 @@ $spread-shadow: 2px;
 				color: white;
 
 				span{
-					border-bottom-color: white;
+					border-bottom-color: transparent;
 
 					-webkit-transition-delay: 0.125s;
 			      	-moz-transition-delay: 0.125s;
@@ -122,6 +196,21 @@ $spread-shadow: 2px;
 					    -webkit-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
 					    -moz-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
 					    transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+
+					    -webkit-transition-delay: 0s;
+				     	-moz-transition-delay: 0s;
+				      	transition-delay: 0s;
+				      	/*-webkit-transform-origin: center;
+				      	-moz-transform-origin: center;
+				      	-ms-transform-origin: center;
+				      	-o-transform-origin: center;
+				      	transform-origin: center;*/
+
+				      	-webkit-transform-origin: left;
+				      	-moz-transform-origin: left;
+				      	-ms-transform-origin: left;
+				      	-o-transform-origin: left;
+				      	transform-origin: left;
 					}
 				}
 			}
