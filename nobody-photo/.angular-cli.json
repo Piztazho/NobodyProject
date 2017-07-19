@@ -21,10 +21,15 @@
       "styles": [
         "styles.scss",
         "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
-        "../bower_components/font-awesome/scss/font-awesome.scss"
+        "../bower_components/font-awesome/scss/font-awesome.scss",
+        "../bower_components/owl.carousel/dist/assets/owl.carousel.min.css"
       ],
       "stylePreprocessorOptions": { "includePaths": [ "../node_modules" ] },
-      "scripts": ["../bower_components/jquery/dist/jquery.js","../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"],
+      "scripts": [
+        "../bower_components/jquery/dist/jquery.js",
+        "../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js",
+        "../bower_components/owl.carousel/dist/owl.carousel.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
