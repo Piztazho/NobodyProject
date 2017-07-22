@@ -1,3 +1,28 @@
+@font-face {
+  font-family: 'moriston-medium';
+  src:  url('assets/fonts/MoristonPersonal-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-regular';
+  src:  url('assets/fonts/MoristonPersonal-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-semibold';
+  src:  url('assets/fonts/MoristonPersonal-Semibold.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-bold';
+  src:  url('assets/fonts/MoristonPersonal-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-light';
+  src:  url('assets/fonts/MoristonPersonal-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-black';
+  src:  url('assets/fonts/MoristonPersonal-Black.woff') format('woff');
+}
+
 /* You can add global styles to this file, and also import other style files */
 .home-carousel{
 	.owl-item{
