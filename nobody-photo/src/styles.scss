@@ -8,6 +8,7 @@
 			background-size: cover;
 			background-position: center;
 
+
 			.gradient{
 				background: -moz-linear-gradient(top, rgba(0,0,0,0) 86%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
 				background: -webkit-linear-gradient(top, rgba(0,0,0,0) 86%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -25,7 +26,19 @@
 		    text-align: center;
 		    width: 50px;
 		}
+		.owl-prev{
+			&:before{
+				content: "\f104";
+				color: white;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
+		}
 		.owl-next{
+			&:before{
+				content: "\f105";
+				color: white;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
 			right: 0;
 		}
 	}

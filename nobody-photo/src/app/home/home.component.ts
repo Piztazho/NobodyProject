@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
 		    nav: true,
         autoplay:true,
         autoplayTimeout:5000,
-        autoplayHoverPause:true
+        autoplayHoverPause:true,
+        navText: ['','']
 		});
 
   		this._service.getData('projects').then( r =>{
