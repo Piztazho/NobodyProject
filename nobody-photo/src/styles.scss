@@ -1,1 +1,135 @@
+@font-face {
+  font-family: 'moriston-medium';
+  src:  url('assets/fonts/MoristonPersonal-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-regular';
+  src:  url('assets/fonts/MoristonPersonal-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-semibold';
+  src:  url('assets/fonts/MoristonPersonal-Semibold.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-bold';
+  src:  url('assets/fonts/MoristonPersonal-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-light';
+  src:  url('assets/fonts/MoristonPersonal-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'moriston-black';
+  src:  url('assets/fonts/MoristonPersonal-Black.woff') format('woff');
+}
+
 /* You can add global styles to this file, and also import other style files */
+.home-carousel{
+	.owl-item{
+		div{
+			width: 100vw;
+			height: 100vh;
+			//background: url('https://mir-cdn.behance.net/v1/rendition/projects/original/71533c53518003.Y3JvcCwxMzM2LDEwNDUsMCw0ODE.jpg');
+			background-size: cover;
+			background-position: center;
+
+
+			.gradient{
+				background: -moz-linear-gradient(top, rgba(0,0,0,0) 86%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0) 86%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 86%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+			}
+		}
+	}
+
+	.owl-nav{
+		.owl-prev, .owl-next {
+	    	position: absolute;
+	    	top: 50%;
+	    	margin-top: -50px;
+		    text-align: center;
+		    width: 50px;
+		}
+		.owl-prev{
+			&:before{
+				content: "\f104";
+				color: white;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
+		}
+		.owl-next{
+			&:before{
+				content: "\f105";
+				color: white;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
+			right: 0;
+		}
+	}
+
+	.owl-dots{
+		position: absolute;
+		bottom: 10px;
+		left: calc(50% - 40px);
+		.owl-dot{
+			display: inline-block;
+			&.active{
+				span{
+					&:before{
+						content: "\f111";
+					}
+				}
+			}
+
+			span{
+				width: 20px;
+				height: 20px;
+				margin: 5px 7px;
+				display: block;
+				transition: opacity .2s ease;
+				border-radius: 30px;
+				&:before{
+					content: "\f10c";
+					color: white;
+					font: normal normal normal 20px/1 FontAwesome;
+				}
+			}
+		}
+	}
+}
+
+.project-carousel{
+	.owl-nav{
+		.owl-prev, .owl-next {
+	    	position: absolute;
+	    	top: 50%;
+	    	margin-top: -50px;
+		    text-align: center;
+		    width: 50px;
+		}
+		.owl-prev{
+			&:before{
+				content: "\f104";
+				color: black;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
+		}
+		.owl-next{
+			&:before{
+				content: "\f105";
+				color: black;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
+			right: 0;
+		}
+	}
+}
+
+.owl-carousel{
+	.owl-item {
+		img{
+			width: auto;
+		}
+	}
+}

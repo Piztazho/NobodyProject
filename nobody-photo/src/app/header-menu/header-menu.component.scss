@@ -233,6 +233,8 @@ $spread-shadow: 2px;
     align-items: center;
     justify-content: center;
 
+    z-index: 98;
+
 	&.open{
 		width: 100vw;
 		height: 100vh;
