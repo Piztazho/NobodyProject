@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 
 import { DataService } from './services/data.service';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { InfoScreenComponent } from './info-screen/info-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderMenuComponent,
     HomeComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    InfoScreenComponent
   ],
   imports: [
     BrowserModule
