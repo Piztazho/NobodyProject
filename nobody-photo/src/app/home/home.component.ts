@@ -15,15 +15,15 @@ export class HomeComponent implements OnInit {
   	ngOnInit() {
 
   		 (<any>$(".owl-carousel")).owlCarousel({
-		    loop:true,
-		    items:1,
-		    responsiveClass:true,
-		    nav: true,
-        autoplay:true,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true,
-        navText: ['','']
-		});
+    		  loop:true,
+    		  items:1,
+    		  responsiveClass:true,
+    		  nav: true,
+          autoplay:true,
+          autoplayTimeout:5000,
+          autoplayHoverPause:true,
+          navText: ['','']
+    		});
 
   		this._service.getData('projects').then( r =>{
   			console.log(r.json());

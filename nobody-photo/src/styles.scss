@@ -73,3 +73,38 @@
 		}
 	}
 }
+
+.project-carousel{
+	.owl-nav{
+		.owl-prev, .owl-next {
+	    	position: absolute;
+	    	top: 50%;
+	    	margin-top: -50px;
+		    text-align: center;
+		    width: 50px;
+		}
+		.owl-prev{
+			&:before{
+				content: "\f104";
+				color: black;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
+		}
+		.owl-next{
+			&:before{
+				content: "\f105";
+				color: black;
+				font: normal normal normal 40px/1 FontAwesome;
+			}
+			right: 0;
+		}
+	}
+}
+
+.owl-carousel{
+	.owl-item {
+		img{
+			width: auto;
+		}
+	}
+}
