@@ -41,7 +41,7 @@ $spread-shadow: 2px;
 }
 
 .header-buttons{
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	z-index: 99;
 
@@ -217,6 +217,7 @@ $spread-shadow: 2px;
 	}
 
 	&.inverted{
+
 		.logo{
 			@include headerStyles($spread-shadow, rgba(0,0,0,1), black);
 		}
@@ -283,7 +284,8 @@ $spread-shadow: 2px;
 }
 
 .menu-extended{
-	position: absolute;
+	position: fixed;
+	font-family: 'moriston-medium', helvetica;
 
 	background-color: black;
 	height: 0; 
