@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { SectionComponent } from './section/section.component';
 
 import { DataService } from './services/data.service';
 
@@ -14,6 +15,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'project', component: ProjectDetailComponent },
   { path: 'project/:id', component: ProjectDetailComponent },
+  { path: 'section', component: SectionComponent },
+  { path: 'section/:section', component: SectionComponent },
   { path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -25,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderMenuComponent,
     HomeComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,
