@@ -10,7 +10,7 @@ import * as jQuery from 'jquery';
 })
 export class InfoScreenComponent implements OnInit {
 
-  public logoUrl:string = '../../../assets/logo-01.png';
+  public logoUrl:string = '../../../assets/logo-01_white.png';
 
   constructor( private _service: DataService ) { }
 
