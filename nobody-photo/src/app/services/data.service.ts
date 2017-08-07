@@ -25,10 +25,10 @@ export class DataService {
   	}
 
  	getData(dataRequest: any, queries: string = ''): Observable<any> {
- 		console.log(this._url + dataRequest + '?' + queries + this._id);
+ 		console.log(this._url + dataRequest + '?' + queries +'&'+ this._id);
     	//return this.http.get(this._url + dataRequest + '?' + queries + this._id) // define a variable server_url to assign the requested url
-    	//return this.http.get('../assets/data/project.json') // define a variable server_url to assign the requested url
-    	return this.http.get('../assets/data/project-detail.json') // define a variable server_url to assign the requested url
+    	return this.http.get('../assets/data/project.json') // define a variable server_url to assign the requested url
+    	//return this.http.get('../assets/data/project-detail.json') // define a variable server_url to assign the requested url
      		.map(this.extractData);
   	}
   	//requestData()

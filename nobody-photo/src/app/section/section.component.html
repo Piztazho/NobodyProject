@@ -1,5 +1,14 @@
 <div class="container item-list">
 	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-4 item-project" *ngFor="let proj of projects">
+			<a href="project/{{proj.id}}">
+				<img src="{{proj.covers[404]}}">
+				<div class="title-project">
+					<h3>{{proj.name}}</h3>
+				</div>
+			</a>
+		</div>
+
 		<div class="col-xs-12 col-sm-6 col-md-4 item-project">
 			<a href="project/0">
 				<img src="https://mir-s3-cdn-cf.behance.net/projects/404/71533c53518003.Y3JvcCwxMzM2LDEwNDUsMCw0ODE.jpg">
