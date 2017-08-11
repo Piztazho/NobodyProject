@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import * as jQuery from 'jquery';
 //import * as $ from '@types/jquery';
 
@@ -10,25 +11,43 @@ import * as jQuery from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
-  	constructor( private _service: DataService ) {	}
+  public projects = [];
+  public maxSlider = 5;
 
-  	ngOnInit() {
+  constructor( private _service: DataService, private _sanitizer: DomSanitizer ) {	}
 
-  		 (<any>$(".owl-carousel")).owlCarousel({
-    		  loop:true,
-    		  items:1,
-    		  responsiveClass:true,
-    		  nav: true,
-          autoplay:false,
-          autoplayTimeout:5000,
-          autoplayHoverPause:true,
-          navText: ['','']
-    		});
+  ngOnInit() {
+    let self = this;
 
-  		this._service.getData('projects').then( r =>{
-  			console.log(r.json());
-  		});
+    this._service.getData('projects').take(1).map((res) => {
 
-  	}
+      if(res.projects.length < this.maxSlider)
+        return res.projects
+      else
+        return res.projects.slice(0, 5);
+      
+    }).subscribe(data => {
+      this.projects = data;
+    });
+  }
+
+  initCarousel(){
+    (<any>$(".owl-carousel")).owlCarousel({
+      loop:true,
+      items:1,
+      responsiveClass:true,
+      nav: true,
+      autoplay:false,
+      autoplayTimeout:5000,
+      autoplayHoverPause:true,
+      navText: ['',''],
+      lazyLoad: true          
+    });
+
+  }
+
+  correctURL(url){
+    return this._sanitizer.bypassSecurityTrustStyle('url('+url+')');
+  }
 
 }
