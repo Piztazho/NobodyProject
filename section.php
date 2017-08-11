@@ -4,7 +4,7 @@
 	try {
 		$filter = $_GET["field"];
 
-		$url = filter_var($main_dir.'users/'.$user_name.'/projects/?field='.$filter.'&client_id='.$client_id, FILTER_SANITIZE_URL);
+		$url = str_replace ( ' ', '%20',$main_dir.'users/'.$user_name.'/projects/?field='.$filter.'&client_id='.$client_id);
 
 		$ch = curl_init();
 		curl_setopt ($ch, CURLOPT_URL, $url);

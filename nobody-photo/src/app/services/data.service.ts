@@ -25,13 +25,8 @@ export class DataService {
   }
 
   getData(dataRequest: any, queries: string = ''): Observable<any> {
-    console.log('http://thenobodyphotography.com.mx/service/'+dataRequest+'.php?'+queries);
-    //return this.http.get(this._url + dataRequest + '?' + queries + this._id, this.createAuthorizationHeader(headers)) // define a variable server_url to assign the requested url
     return this.http.get('http://thenobodyphotography.com.mx/service/'+dataRequest+'.php?'+queries) // define a variable server_url to assign the requested url
-    //return this.http.get('../assets/data/project.json') // define a variable server_url to assign the requested url
-    //return this.http.get('../assets/data/project-detail.json') // define a variable server_url to assign the requested url
     .map(this.extractData);
   }
-  //requestData()
 
 }

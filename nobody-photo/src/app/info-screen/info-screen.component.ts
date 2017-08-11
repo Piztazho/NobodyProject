@@ -15,9 +15,6 @@ export class InfoScreenComponent implements OnInit {
   constructor( private _service: DataService ) { }
 
   ngOnInit() {
-    this._service.getData('projects').then( r =>{
-  			console.log(r.json());
-  		});
   }
 
 }

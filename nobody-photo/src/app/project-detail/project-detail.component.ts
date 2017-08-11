@@ -32,7 +32,6 @@ export class ProjectDetailComponent implements OnInit {
         this.items = data.filter((elem) => {
           return (elem.type == 'image');
         });
-        console.log(this.items);
       });
     });
   }
