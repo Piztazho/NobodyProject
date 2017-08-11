@@ -22,11 +22,10 @@ export class SectionComponent implements OnInit {
       		if((this.section == undefined) || ((this.section == '')) )
         		this.router.navigate(['/']);
 
-      		this._service.getData('users/thenobodyphotography/projects/', this.getField(this.section)).take(1).map((res) => {
+      		this._service.getData('section', this.getField(this.section) ).take(1).map((res) => {
         		return res.projects;
       		}).subscribe(data => {
       			this.projects = data;
-     			console.log(data);
       		});
     	});
   	}

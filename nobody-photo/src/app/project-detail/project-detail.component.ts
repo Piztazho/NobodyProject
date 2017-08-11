@@ -22,8 +22,7 @@ export class ProjectDetailComponent implements OnInit {
       
       if((this.id == undefined) || ((this.id == '')) )
         this.router.navigate(['/']);
-
-      this._service.getData('projects/'+this.id).take(1).map((res) => {
+        this._service.getData('projects-detail', 'id='+this.id).take(1).map((res) => {
         return res.project;
       }).map((res) =>{
         this.title = res.name;

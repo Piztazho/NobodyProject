@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     let self = this;
 
-    this._service.getData('users/thenobodyphotography/').take(1).map((res) => {
+    this._service.getData('projects').take(1).map((res) => {
 
       if(res.projects.length < this.maxSlider)
         return res.projects
