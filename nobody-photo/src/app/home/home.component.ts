@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
       items:1,
       responsiveClass:true,
       nav: true,
+      dots: false,
       autoplay:false,
       autoplayTimeout:5000,
       autoplayHoverPause:true,

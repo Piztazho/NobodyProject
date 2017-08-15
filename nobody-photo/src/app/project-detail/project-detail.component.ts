@@ -19,10 +19,10 @@ export class ProjectDetailComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.id = params.id;
-      
-      if((this.id == undefined) || ((this.id == '')) )
+
+      if ((this.id == undefined) || ((this.id == '')) )
         this.router.navigate(['/']);
-        this._service.getData('projects-detail', 'id='+this.id).take(1).map((res) => {
+        this._service.getData('projects-detail', 'id=' + this.id).take(1).map((res) => {
         return res.project;
       }).map((res) =>{
         this.title = res.name;
@@ -46,7 +46,7 @@ export class ProjectDetailComponent implements OnInit {
       autoplayTimeout:5000,
       autoplayHoverPause:true,
       navText: ['',''],
-      lazyLoad: true          
+      lazyLoad: true
     });
   }
 }

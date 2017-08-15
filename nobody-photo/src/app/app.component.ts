@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  loading: boolean;
+
+  ngOnInit(){
+  	
+  }
+
+  ngAfterViewInit() {
+    //this.loading = false;
+  }
+
+
+
 }

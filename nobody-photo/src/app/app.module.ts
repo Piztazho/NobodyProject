@@ -12,6 +12,7 @@ import { SectionComponent } from './section/section.component';
 import { InfoScreenComponent } from './info-screen/info-screen.component';
 
 import { DataService } from './services/data.service';
+import { LoaderComponent } from './loader/loader.component';
 
 
 const appRoutes: Routes = [
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ProjectDetailComponent,
     SectionComponent,
-    InfoScreenComponent
+    InfoScreenComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

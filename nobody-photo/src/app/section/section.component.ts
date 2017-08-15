@@ -19,22 +19,28 @@ export class SectionComponent implements OnInit {
   		this.activatedRoute.params.subscribe((params: Params) => {
       		this.section = params.section;
       
-      		if((this.section == undefined) || ((this.section == '')) )
-        		this.router.navigate(['/']);
+          if((this.section == undefined) || ((this.section == '')) )
+            this.router.navigate(['/']);
 
-      		this._service.getData('section', this.getField(this.section) ).take(1).map((res) => {
+          let tag = this.getField(this.section);
+
+      		this._service.getData('section' ).take(1)
+          .map((res) => {
         		return res.projects;
-      		}).subscribe(data => {
-      			this.projects = data;
+      		})
+          .subscribe(data => {
+            this.projects = data.filter((item) =>{
+              return item.fields[0] == tag;
+            });
       		});
     	});
   	}
 
   	getField(section): string{
-  		let query: string = 'field=';
+  		let query: string = '';
   		switch (section) {
   			case "personal":
-  				query+='Personal';
+  				query+='Architecture';
   				break;
 
   			case "ads":
@@ -46,7 +52,7 @@ export class SectionComponent implements OnInit {
   				break;
 
   			case "beauty":
-  				query+='MakeUp%20Arts%20(MUA)';
+  				query+='MakeUp Arts (MUA)';
   				break;
   			
   			default:

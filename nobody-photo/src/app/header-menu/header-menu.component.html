@@ -1,8 +1,8 @@
 <div class="header-buttons" [ngClass]="{inverted: !openMenu}">
 	<div class="container">
 		<div class="row">
-			<div class=" col-xs-4 col-md-2 logo">
-				<a href="#" >
+			<div class=" col-xs-4 col-md-2 logo" [ngClass]="{logo: (!hideLogo || !openMenu)}">
+				<a href="/home" *ngIf="(!hideLogo || !openMenu)">
 					<img [src]="logoUrl">
 				</a>
 			</div>
@@ -26,17 +26,24 @@
 <div class="menu-extended" [ngClass]="{open: !openMenu}">
 	<nav class="menu-items">
 		<ul>
-			<li>
-				<a href="section/personal">Personal</a>
-			</li>
-			<li>
-				<a href="section/ads">ADS</a>
+			<li class="hidden-md hidden-lg inverted logo-item" >
+				<div class="logo" [ngClass]="{logo: (!hideLogo || !openMenu)}">
+					<a href="/home" *ngIf="(!hideLogo || !openMenu)">
+						<img [src]="logoUrl">
+					</a>
+				</div>
 			</li>
 			<li>
 				<a href="section/fashion">Fashion</a>
 			</li>
 			<li>
 				<a href="section/beauty">Beauty</a>
+			</li>
+			<li>
+				<a href="section/ads">ADS</a>
+			</li>
+			<li>
+				<a href="section/personal">Personal</a>
 			</li>
 			<li>
 				<a href="bio">Bio</a>

@@ -5,7 +5,7 @@
 	<div class="owl-carousel project-carousel">
 		<div class="item-elem" *ngFor="let item of items; let last = last">
 			{{last ? initCarousel() : ''}}
-	  		<img class="img-responsive" src="{{item.src}}">
+	  		<img class="img-responsive" src="{{item.sizes.max_1240}}">
 	  	</div>
 	</div>
 
