@@ -14,6 +14,8 @@ import { InfoScreenComponent } from './info-screen/info-screen.component';
 import { DataService } from './services/data.service';
 import { LoaderComponent } from './loader/loader.component';
 
+import { CommonModule } from '@angular/common'; 
+
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpModule
+    HttpModule,
+    CommonModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

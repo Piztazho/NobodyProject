@@ -13,6 +13,7 @@ export class ProjectDetailComponent implements OnInit {
   public id: string = '';
   public title:string = '';
   public items = [];
+  public customProj: boolean;
 
   constructor(private _service: DataService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -22,17 +23,26 @@ export class ProjectDetailComponent implements OnInit {
 
       if ((this.id == undefined) || ((this.id == '')) )
         this.router.navigate(['/']);
-        this._service.getData('projects-detail', 'id=' + this.id).take(1).map((res) => {
-        return res.project;
-      }).map((res) =>{
-        this.title = res.name;
+        this.customProj = this.id == '12343212';
 
-        return res.modules;
-      }).subscribe(data => {
-        this.items = data.filter((elem) => {
+      if(!this.customProj){
+        this._service.getData('projects-detail', 'id=' + this.id).take(1).map((res) => {
+          return res.project;
+        }).map((res) =>{
+          this.title = res.name;
+          return res.modules;
+        }).subscribe(data => {
+          this.items = data.filter((elem) => {
           return (elem.type == 'image');
         });
       });
+    }else{
+
+      for(let i = 1; i <= 42; i++){
+        let src = {src: `../../../assets/CustomProject/${i}.jpg`};
+        this.items.push(src)
+      }
+    }
     });
   }
 

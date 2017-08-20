@@ -2,14 +2,21 @@
   home works!
 </p>-->
 <div class="project-detail">
-	<div class="owl-carousel project-carousel">
+	<div class="owl-carousel project-carousel" *ngIf="!customProj">
 		<div class="item-elem" *ngFor="let item of items; let last = last">
 			{{last ? initCarousel() : ''}}
 	  		<img class="img-responsive" src="{{item.sizes.max_1240}}">
 	  	</div>
 	</div>
+	<div class="owl-carousel project-carousel" *ngIf="customProj">
+		<div class="item-elem" *ngFor="let item of items; let i = index; let last = last">
+			{{last ? initCarousel() : ''}}
+	  		<img class="img-responsive" [src]="item.src">
+	  	</div>
+	</div>
 
 	<div class="project-title hidden-xs">
-		<h2>{{title}}</h2>
+		<h2 *ngIf="customProj">Personal Work</h2>
+		<h2 *ngIf="!customProj">{{title}}</h2>
 	</div>
 </div>

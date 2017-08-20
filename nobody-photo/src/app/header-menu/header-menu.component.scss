@@ -283,6 +283,10 @@ $spread-shadow: 0px;
 				      	-ms-transform-origin: left;
 				      	-o-transform-origin: left;
 				      	transform-origin: left;
+
+				      	@media (max-width: #{$screen-xs-max}) {
+					      	width: 35px;
+				      	}
 					}
 				}
 			}

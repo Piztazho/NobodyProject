@@ -6,18 +6,21 @@ import * as jQuery from 'jquery';
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
-  styleUrls: ['./section.component.scss']
+  styleUrls: ['./section.component.scss'],
 })
 export class SectionComponent implements OnInit {
 
 	public projects = [];
 	public section:string = '';
+  public customProj: boolean = false;
 
   	constructor(private _service: DataService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
  	ngOnInit() {
   		this.activatedRoute.params.subscribe((params: Params) => {
       		this.section = params.section;
+
+          this.customProj = this.section == 'personal';
       
           if((this.section == undefined) || ((this.section == '')) )
             this.router.navigate(['/']);
