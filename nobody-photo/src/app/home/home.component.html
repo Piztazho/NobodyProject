@@ -2,10 +2,25 @@
   home works!
 </p>-->
 <div class="owl-carousel home-carousel">
-  <div class="item-elem" *ngFor="let proj of projects; let last = last" [style.background-image]="correctURL(proj.covers.original)">
-    {{last ? initCarousel() : ''}}
-    <a href="/project/{{proj.id}}">
-      <div class=""></div>
-    </a>
-  </div>
+
+  	<div class="item-elem" *ngFor="let proj of projects; let last = last"  >
+  		<div *isDesktop [style.background-image]="correctURL(proj.url.desktop)">
+    		{{last ? initCarousel() : ''}}
+    		<a href="/project/{{proj.id}}">
+    	  		<div class=""></div>
+	    	</a>
+  		</div>
+  		<div *isTablet [style.background-image]="correctURL(proj.url.tablet)">
+    		{{last ? initCarousel() : ''}}
+    		<a href="/project/{{proj.id}}">
+    	  		<div class=""></div>
+	    	</a>
+  		</div>
+  		<div *isMobile [style.background-image]="correctURL(proj.url.mobile)">
+    		{{last ? initCarousel() : ''}}
+    		<a href="/project/{{proj.id}}">
+    	  		<div class=""></div>
+	    	</a>
+  		</div>
+  	</div>
 </div>

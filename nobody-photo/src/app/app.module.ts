@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ResponsiveModule } from 'ng2-responsive'
 
 import { RouterModule, Routes } from '@angular/router';
 import {HttpModule} from '@angular/http';
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpModule,
-    CommonModule
+    CommonModule,
+    ResponsiveModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

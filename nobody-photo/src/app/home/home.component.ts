@@ -19,7 +19,58 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     let self = this;
 
-    this._service.getData('projects').take(1).map((res) => {
+    this.projects = [
+      {
+        id: '53518003',
+        url: {
+          desktop: '../../../assets/home/desktop/1.jpg',
+          tablet: '../../../assets/home/tablet/1.jpg',
+          mobile: '../../../assets/home/mobile/1.jpg'
+        }
+      },
+      {
+        id: '53518003',
+        url: {
+          desktop: '../../../assets/home/desktop/2.jpg',
+          tablet: '../../../assets/home/tablet/2.jpg',
+          mobile: '../../../assets/home/mobile/2.jpg'
+        }
+      },
+      {
+        id: '53518003',
+        url: {
+          desktop: '../../../assets/home/desktop/3.jpg',
+          tablet: '../../../assets/home/tablet/3.jpg',
+          mobile: '../../../assets/home/mobile/3.jpg'
+        }
+      },
+      {
+        id: '53518003',
+        url: {
+          desktop: '../../../assets/home/desktop/4.jpg',
+          tablet: '../../../assets/home/tablet/4.jpg',
+          mobile: '../../../assets/home/mobile/4.jpg'
+        }
+      },
+      {
+        id: '53518003',
+        url: {
+          desktop: '../../../assets/home/desktop/5.jpg',
+          tablet: '../../../assets/home/tablet/5.jpg',
+          mobile: '../../../assets/home/mobile/5.jpg'
+        }
+      },
+      {
+        id: '53518003',
+        url: {
+          desktop: '../../../assets/home/desktop/6.jpg',
+          tablet: '../../../assets/home/tablet/6.jpg',
+          mobile: '../../../assets/home/mobile/6.jpg'
+        }
+      },
+    ];
+
+    /*this._service.getData('projects').take(1).map((res) => {
 
       if(res.projects.length < this.maxSlider)
         return res.projects
@@ -28,7 +79,7 @@ export class HomeComponent implements OnInit {
       
     }).subscribe(data => {
       this.projects = data;
-    });
+    });*/
   }
 
   initCarousel(){
