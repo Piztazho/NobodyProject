@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
         }
       },
       {
-        id: '53518003',
+        id: '51269875',
         url: {
           desktop: '../../../assets/home/desktop/2.jpg',
           tablet: '../../../assets/home/tablet/2.jpg',
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
         }
       },
       {
-        id: '53518003',
+        id: '43178183',
         url: {
           desktop: '../../../assets/home/desktop/3.jpg',
           tablet: '../../../assets/home/tablet/3.jpg',
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
         }
       },
       {
-        id: '53518003',
+        id: '36291327',
         url: {
           desktop: '../../../assets/home/desktop/4.jpg',
           tablet: '../../../assets/home/tablet/4.jpg',
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
         }
       },
       {
-        id: '53518003',
+        id: '42036141',
         url: {
           desktop: '../../../assets/home/desktop/5.jpg',
           tablet: '../../../assets/home/tablet/5.jpg',
@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
         }
       },
       {
-        id: '53518003',
+        id: '50199283',
         url: {
           desktop: '../../../assets/home/desktop/6.jpg',
           tablet: '../../../assets/home/tablet/6.jpg',
