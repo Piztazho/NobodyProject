@@ -33,15 +33,22 @@ $lg-up: "#{$screen} and (min-width: #{$screen-lg-min})";
 $spread-shadow: 2px;
 
 .info-screen{
-    text-align: center;
+    text-align: justify;
     display: flex;
-    flex-direction: column;
     align-content: center;
-    justify-content: space-around;
-    padding-top: 10%;
-    height: 100vh;
+    padding-top: 5%;
     font-family: 'moriston-medium', helvetica;
-    font-size: 24px;
+    font-size: 14px;
+
+    .home-logo{
+        display: flex;
+        align-items: center;
+    }
+
+    & .home-logo,
+    & .eng{
+        border-right: 1px solid black;
+    }
 
     > p > span {
         display: block;
@@ -55,30 +62,43 @@ $spread-shadow: 2px;
         padding: 10px;
     }
 
-    .social-network{
-        a{
-            color: black;
-            font-size: 30px;
-            margin-left: 40px;
-
-            &.instagram{
-                span{
-                    color: white;
-                    background-color: black;
-                    border-radius: 5px;
-                    padding: 2px;
-                    font-size: 25px;
-
-                }
-            }
-
-            &:first-child{
-                margin-left: 0;
-            }
-        }
-    }
-
+    
     @media (max-width: #{$screen-xs-max}){
         padding-top: 25%;
+    }
+    @media (max-width: #{$screen-sm-max}){
+        display: block;
+        & .home-logo,
+        & .eng{
+            border-right: none;
+        }
+    }
+}
+.social-network{
+    width: 100%;
+    height: 7vh;
+    padding-top: 4vh;
+    display: flex;
+    justify-content: center;
+
+    a{
+        color: black;
+        font-size: 30px;
+        margin-left: 40px;
+            
+        &.instagram{
+            span{
+                color: white;
+                background-color: black;
+                border-radius: 5px;
+                padding: 2px;
+                font-size: 25px;
+            
+            }
+        }
+            
+        &:first-child{
+            margin-left: 0;
+        }
     }
 }
