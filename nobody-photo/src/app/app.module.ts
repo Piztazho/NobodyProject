@@ -13,7 +13,6 @@ import { SectionComponent } from './section/section.component';
 import { InfoScreenComponent } from './info-screen/info-screen.component';
 
 import { DataService } from './services/data.service';
-import { LoaderComponent } from './loader/loader.component';
 
 import { CommonModule } from '@angular/common'; 
 
@@ -38,8 +37,7 @@ const appRoutes: Routes = [
     HomeComponent,
     ProjectDetailComponent,
     SectionComponent,
-    InfoScreenComponent,
-    LoaderComponent
+    InfoScreenComponent
   ],
   imports: [
     BrowserModule,

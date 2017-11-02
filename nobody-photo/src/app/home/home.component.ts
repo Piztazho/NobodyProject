@@ -83,23 +83,23 @@ export class HomeComponent implements OnInit {
   }
 
   initCarousel(){
-    (<any>$(".owl-carousel")).owlCarousel({
-      loop:true,
-      items:1,
-      responsiveClass:true,
+    (<any>$('.owl-carousel')).owlCarousel({
+      loop: true,
+      items: 1,
+      responsiveClass: true,
       nav: true,
       dots: false,
-      autoplay:false,
-      autoplayTimeout:5000,
-      autoplayHoverPause:true,
-      navText: ['',''],
-      lazyLoad: true          
+      autoplay: false,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      navText: ['', ''],
+      lazyLoad: true
     });
 
   }
 
   correctURL(url){
-    return this._sanitizer.bypassSecurityTrustStyle('url('+url+')');
+    return this._sanitizer.bypassSecurityTrustStyle('url(' + url + ')');
   }
 
 }

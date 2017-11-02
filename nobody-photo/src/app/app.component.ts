@@ -7,16 +7,10 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  loading: boolean;
 
   ngOnInit(){
   	
   }
-
-  ngAfterViewInit() {
-    //this.loading = false;
-  }
-
 
 
 }
