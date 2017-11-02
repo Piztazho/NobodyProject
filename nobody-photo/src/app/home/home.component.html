@@ -3,32 +3,36 @@
 </p>-->
 <div class="owl-carousel home-carousel">
 
-  	<div class="item-elem" *ngFor="let proj of projects; let last = last"  >
+	<div class="item-elem" *ngFor="let proj of projects; let last = last">
 		<img [src]="proj.url.desktop" (load)="proj.currentImg = proj.url.desktop" class="hidden">
-  		<div *isDesktop class="img-car" [style.background-image]="correctURL(proj.currentImg)">
-				<div class="loading" *ngIf="notLoaded == proj.currentImg">
-						<h1>Loading...</h1>
-					</div>
-		<div class="loading-img" *ngIf="notLoaded == proj.currentImg">
-			<h1>Loading...</h1>
+		<div *isDesktop class="img-car" [style.background-image]="correctURL(proj.currentImg)">
+			<div class="loading-img" *ngIf="notLoaded == proj.currentImg">
+				<h1>Loading...</h1>
+			</div>
+			{{last ? initCarousel() : ''}}
+			<a href="/project/{{proj.id}}">
+				<div class=""></div>
+			</a>
 		</div>
-		<!-- <div *isDesktop [style.background-image]="correctURL(proj.url.desktop)"> -->
-    		{{last ? initCarousel() : ''}}
-    		<a href="/project/{{proj.id}}">
-    	  		<div class=""></div>
-	    	</a>
-  		</div>
-  		<div *isTablet [style.background-image]="correctURL(proj.url.tablet)">
-    		{{last ? initCarousel() : ''}}
-    		<a href="/project/{{proj.id}}">
-    	  		<div class=""></div>
-	    	</a>
-  		</div>
-  		<div *isMobile [style.background-image]="correctURL(proj.url.mobile)">
-    		{{last ? initCarousel() : ''}}
-    		<a href="/project/{{proj.id}}">
-    	  		<div class=""></div>
-	    	</a>
-  		</div>
-  	</div>
+		<img [src]="proj.url.desktop" (load)="proj.currentImg = proj.url.tablet" class="hidden">
+		<div *isTablet [style.background-image]="correctURL(proj.url.tablet)">
+			<div class="loading-img" *ngIf="notLoaded == proj.currentImg">
+				<h1>Loading...</h1>
+			</div>
+			{{last ? initCarousel() : ''}}
+			<a href="/project/{{proj.id}}">
+				<div class=""></div>
+			</a>
+		</div>
+		<img [src]="proj.url.desktop" (load)="proj.currentImg = proj.url.mobile" class="hidden">
+		<div *isMobile [style.background-image]="correctURL(proj.url.mobile)">
+			<div class="loading-img" *ngIf="notLoaded == proj.currentImg">
+				<h1>Loading...</h1>
+			</div>
+			{{last ? initCarousel() : ''}}
+			<a href="/project/{{proj.id}}">
+				<div class=""></div>
+			</a>
+		</div>
+	</div>
 </div>
