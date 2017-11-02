@@ -4,7 +4,15 @@
 <div class="owl-carousel home-carousel">
 
   	<div class="item-elem" *ngFor="let proj of projects; let last = last"  >
-  		<div *isDesktop [style.background-image]="correctURL(proj.url.desktop)">
+		<img [src]="proj.url.desktop" (load)="proj.currentImg = proj.url.desktop" class="hidden">
+  		<div *isDesktop class="img-car" [style.background-image]="correctURL(proj.currentImg)">
+				<div class="loading" *ngIf="notLoaded == proj.currentImg">
+						<h1>Loading...</h1>
+					</div>
+		<div class="loading-img" *ngIf="notLoaded == proj.currentImg">
+			<h1>Loading...</h1>
+		</div>
+		<!-- <div *isDesktop [style.background-image]="correctURL(proj.url.desktop)"> -->
     		{{last ? initCarousel() : ''}}
     		<a href="/project/{{proj.id}}">
     	  		<div class=""></div>

@@ -13,15 +13,17 @@ export class HomeComponent implements OnInit {
 
   public projects = [];
   public maxSlider = 5;
+  public notLoaded = '-';
 
   constructor( private _service: DataService, private _sanitizer: DomSanitizer ) {	}
 
   ngOnInit() {
-    let self = this;
+    const self = this;
 
     this.projects = [
       {
         id: '53518003',
+        currentImg: '-',
         url: {
           desktop: '../../../assets/home/desktop/1.jpg',
           tablet: '../../../assets/home/tablet/1.jpg',
@@ -30,6 +32,7 @@ export class HomeComponent implements OnInit {
       },
       {
         id: '51269875',
+        currentImg: '-',
         url: {
           desktop: '../../../assets/home/desktop/2.jpg',
           tablet: '../../../assets/home/tablet/2.jpg',
@@ -38,6 +41,7 @@ export class HomeComponent implements OnInit {
       },
       {
         id: '43178183',
+        currentImg: '-',
         url: {
           desktop: '../../../assets/home/desktop/3.jpg',
           tablet: '../../../assets/home/tablet/3.jpg',
@@ -46,6 +50,7 @@ export class HomeComponent implements OnInit {
       },
       {
         id: '36291327',
+        currentImg: '-',
         url: {
           desktop: '../../../assets/home/desktop/4.jpg',
           tablet: '../../../assets/home/tablet/4.jpg',
@@ -54,6 +59,7 @@ export class HomeComponent implements OnInit {
       },
       {
         id: '42036141',
+        currentImg: '-',
         url: {
           desktop: '../../../assets/home/desktop/5.jpg',
           tablet: '../../../assets/home/tablet/5.jpg',
@@ -62,6 +68,7 @@ export class HomeComponent implements OnInit {
       },
       {
         id: '50199283',
+        currentImg: '-',
         url: {
           desktop: '../../../assets/home/desktop/6.jpg',
           tablet: '../../../assets/home/tablet/6.jpg',
@@ -76,13 +83,13 @@ export class HomeComponent implements OnInit {
         return res.projects
       else
         return res.projects.slice(0, 5);
-      
+
     }).subscribe(data => {
       this.projects = data;
     });*/
   }
 
-  initCarousel(){
+  initCarousel() {
     (<any>$('.owl-carousel')).owlCarousel({
       loop: true,
       items: 1,
@@ -98,7 +105,11 @@ export class HomeComponent implements OnInit {
 
   }
 
-  correctURL(url){
+  correctURL(url) {
+    if (url == ''){
+      console.log('empty');
+      return 
+    } 
     return this._sanitizer.bypassSecurityTrustStyle('url(' + url + ')');
   }
 
